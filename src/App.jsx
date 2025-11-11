@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Layout/Navbar";
-import Body from "./Pages/Body";
+// import Body from "./Pages/Body";
 import Inbox from "./Pages/Inbox";
 import Mail from "./Pages/Mail";
 import SendMail from "./components/ComposeMail/SendMail";
