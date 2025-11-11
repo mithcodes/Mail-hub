@@ -1,1 +1,225 @@
- @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind custom styles for Quill */
+.ql-toolbar {
+  @apply border-b border-gray-300;
+}
+
+.ql-container {
+  @apply min-h-[220px] max-w-[480px];
+}
+
+.ql-editor {
+  @apply text-gray-800 p-2;
+}
+/* Custom styles for Quill editor */
+.custom-quill-toolbar .ql-toolbar {
+  @apply p-1; /* Reduce padding */
+  @apply text-sm; /* Make text smaller */
+}
+
+.custom-quill-toolbar .ql-toolbar .ql-formats {
+  @apply m-0 p-0; /* Remove margin and padding */
+}
+
+.custom-quill-toolbar .ql-container.ql-snow {
+  @apply text-sm; /* Reduce text size inside the editor */
+}
+
+.custom-quill-toolbar .ql-toolbar button {
+  @apply h-5 w-5; /* Reduce button height and width */
+}
+/* Custom styles for Quill editor */
+.custom-quill-editor .ql-container {
+  @apply border-none; /* Remove the border around the editor */
+}
+
+.custom-quill-editor .ql-toolbar {
+  @apply border-b-slate-300 border-t-0 border-r-0 border-l-0; /* Remove the border around the toolbar */
+}
+
+.custom-quill-editor .ql-editor {
+  @apply focus:outline-none; /* Remove focus outline when editing */
+  @apply h-[220px] w-[480px] overflow-y-auto;
+}
+
+/* Custom NProgress styles */
+#nprogress {
+  pointer-events: none; /* Prevent interactions while loading */
+}
+
+#nprogress .bar {
+  background: #2dd4bf; /* Change this to your desired color */
+  position: fixed;
+  z-index: 1031; /* Adjust if necessary */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 3px; /* Height of the progress bar */
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0; /* Start peg from the right */
+  width: 100px; /* Width of the peg */
+  height: 100%; /* Full height */
+  box-shadow: 0 0 10px #2dd4bf, 0 0 5px #2dd4bf; /* Color for peg shadow */
+  opacity: 1; /* Opacity of the peg */
+  transform: translate3d(0, 0, 0); /* Smooth transition */
+}
+
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031; /* Ensure the spinner is above other content */
+  top: 15px; /* Position it */
+  right: 15px; /* Position it */
+}
+
+#nprogress .spinner-icon {
+  width: 48px; /* Adjust width */
+  height: 48px; /* Adjust height */
+  border: solid 2px transparent; /* Border for the spinner */
+  border-top-color: #2dd4bf; /* Change spinner color */
+  border-left-color: #2dd4bf; /* Change spinner color */
+  border-radius: 50%; /* Make it round */
+  animation: nprogress-spinner 400ms linear infinite; /* Animation */
+}
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg); /* Initial state */
+  }
+  100% {
+    transform: rotate(360deg); /* End state */
+  }
+}
+
+.custom-list ul {
+  @apply list-disc list-inside;
+}
+.custom-list ol {
+  @apply list-decimal list-inside;
+}
+
+
+@keyframes blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10rem, -3.9rem) scale(1.3);
+  }
+  66% {
+    transform: translate(-8rem, 4rem) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  
+   70% {
+    opacity: 1;
+    transform: translateX(22px);
+  } 
+ 
+  97% {
+    opacity: 1;
+    transform: translateX(8px);
+  }
+  99% {
+    opacity: 1;
+    transform: translateX(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Add these custom animation classes */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.9s ease-out forwards;
+  }
+  
+  .animate-slideIn {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  .animate-slideUp {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+  .animate-slideDown {
+    animation: slideDown 0.4s ease-out forwards;
+  }
+  .animate-slideOut {
+    animation: slideOut 0.8s ease-out forwards;
+  }
+  .animate-bounceIn {
+    animation: bounceIn 0.9s ease-out forwards;
+  }
+  
+}
