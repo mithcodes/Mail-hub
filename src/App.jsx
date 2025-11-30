@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Layout/Navbar";
-import Body from "./Pages/Body";
-import Inbox from "./Pages/Inbox";
-import Mail from "./Pages/Mail";
+import Body from "./pages/Body";
+import Inbox from "./pages/Inbox";
+import Mail from "./pages/Mail";
 import SendMail from "./components/ComposeMail/SendMail";
 import { and, collection, doc, onSnapshot, or, orderBy, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -12,18 +12,18 @@ import { setEmails, setMailsArrToDelPermanent, setProfile, setUser } from "./red
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
-import Sent from "./Pages/Sent";
-import Starred from "./Pages/Starred";
-import Snoozed from "./Pages/Snoozed";
-import Draft from "./Pages/Draft";
-import Trash from "./Pages/Trash";
-import SignUp from "./Pages/SignUp";
-import ForgotPassword from "./Pages/ForgotPassword";
-import Login from "./Pages/Login";
+import Sent from "./pages/Sent";
+import Starred from "./pages/Starred";
+import Snoozed from "./pages/Snoozed";
+import Draft from "./pages/Draft";
+import Trash from "./pages/Trash";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+import Login from "./pages/Login";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import UserProfile from "./Pages/UserProfile";
-import AllMails from "./Pages/AllMails";
+import UserProfile from "./pages/UserProfile";
+import AllMails from "./pages/AllMails";
 
 // Define the routes
 const createRouter = (signedIn) =>
